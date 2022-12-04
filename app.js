@@ -1,9 +1,9 @@
 const express = require("express");
 const csv = require("csv");
 const fs = require("fs");
-const part = require("path");
+const path = require("path");
 var colleges = [];
-
+console.log(path.join(__dirname, "data", "engineering colleges in India.csv"));
 fs.readFile(
     path.join(__dirname, "data", "engineering colleges in India.csv"),
     (err, data) => {
