@@ -1,19 +1,22 @@
 const express = require("express");
 const csv = require("csv");
 const fs = require("fs");
-
+const part = require("path");
 var colleges = [];
 
-fs.readFile("./data/engineering colleges in India.csv", (err, data) => {
-    csv.parse(data, function (err, data) {
-        data.shift(); //remove first element from array that is usless data
-        //console.log(data);
-        data.sort(function (a, b) {
-            return a[0].localeCompare(b[0]);
+fs.readFile(
+    path.join(__dirname, "data", "engineering colleges in India.csv"),
+    (err, data) => {
+        csv.parse(data, function (err, data) {
+            data.shift(); //remove first element from array that is usless data
+            //console.log(data);
+            data.sort(function (a, b) {
+                return a[0].localeCompare(b[0]);
+            });
+            colleges = data;
         });
-        colleges = data;
-    });
-});
+    }
+);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
