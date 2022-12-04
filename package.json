@@ -1,0 +1,17 @@
+{
+    "dependencies": {
+        "csv": "^6.2.5",
+        "express": "^4.18.2"
+    },
+    "name": "college-api",
+    "version": "1.0.0",
+    "main": "app.js",
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon app.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": ""
+}
