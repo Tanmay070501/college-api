@@ -1,7 +1,7 @@
 const express = require("express");
 const csv = require("csv");
 const fs = require("fs");
-
+const cors = require("cors");
 var colleges = [];
 
 fs.readFile("./data/engineering colleges in India.csv", (err, data) => {
@@ -17,6 +17,8 @@ fs.readFile("./data/engineering colleges in India.csv", (err, data) => {
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(cors({ origin: "http://localhost:3000" }));
 
 app.get("/colleges/total", (req, res) => {
     const str = {
