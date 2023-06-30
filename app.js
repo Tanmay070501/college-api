@@ -18,7 +18,7 @@ fs.readFile("./data/engineering colleges in India.csv", (err, data) => {
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors());
 
 app.get("/colleges/total", (req, res) => {
     const str = {
